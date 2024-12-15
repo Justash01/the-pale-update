@@ -1,0 +1,25 @@
+{
+  "format_version": [ 1, 1, 1 ],
+  "ja:pale_oak_log": {
+    "sound": "wood"
+  },
+  "ja:pale_oak_stripped_log": {
+    "sound": "wood"
+  },
+  "ja:pale_oak_wood": {
+    "sound": "wood"
+  },
+  "ja:pale_oak_stripped_wood": {
+    "sound": "wood"
+  },
+  "ja:pale_oak_planks": {
+    "sound": "wood",
+    "textures": "pale_oak_planks"
+  },
+  "ja:pale_oak_stairs": {
+    "sound": "wood"
+  },
+  "ja:pale_oak_slab": {
+    "sound": "wood"
+  }
+}

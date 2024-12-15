@@ -1,0 +1,25 @@
+{
+  "format_version": "1.21.10",
+  "minecraft:block": {
+    "description": {
+      "identifier": "ja:pale_oak_planks", 
+      "menu_category": {
+        "category": "construction",
+        "group": "itemGroup.name.planks"
+      }
+    },
+    "components": {
+      "minecraft:light_dampening": 4,
+      "minecraft:destructible_by_mining": { 
+        "seconds_to_destroy": 2
+      },
+      "minecraft:flammable": { 
+        "catch_chance_modifier": 5,
+        "destroy_chance_modifier": 20
+      },
+      "minecraft:destructible_by_explosion": { 
+        "explosion_resistance": 3
+      }
+    }
+  }
+}

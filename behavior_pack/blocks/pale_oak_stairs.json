@@ -1,0 +1,123 @@
+{
+  "format_version": "1.21.10",
+  "minecraft:block": {
+    "description": {
+      "identifier": "ja:pale_oak_stairs", 
+      "menu_category": {
+        "category": "construction",
+        "group": "itemGroup.name.stairs"
+      },
+      "traits": {
+        "minecraft:placement_direction": {
+          "enabled_states": [
+            "minecraft:cardinal_direction",
+            "minecraft:facing_direction"
+          ]
+        }
+      }
+    },
+    
+    "permutations": [
+      {
+        "condition": "q.block_state('minecraft:cardinal_direction') == 'north'",
+        "components": {
+          "minecraft:geometry": {
+            "identifier": "geometry.custom_stair",
+            "bone_visibility": {
+              "side_0": false,
+              "side_1": false
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('minecraft:cardinal_direction') == 'south'",
+        "components": {
+          "minecraft:geometry": {
+            "identifier": "geometry.custom_stair",
+            "bone_visibility": {
+              "side_2": false,
+              "side_3": false
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('minecraft:cardinal_direction') == 'east'",
+        "components": {
+          "minecraft:geometry": {
+            "identifier": "geometry.custom_stair",
+            "bone_visibility": {
+              "side_1": false,
+              "side_2": false
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('minecraft:cardinal_direction') == 'west'",
+        "components": {
+          "minecraft:geometry": {
+            "identifier": "geometry.custom_stair",
+            "bone_visibility": {
+              "side_0": false,
+              "side_3": false
+            }
+          }
+        }
+      },
+
+      {
+        "condition": "q.block_state('minecraft:facing_direction') == 'up' && q.block_state('minecraft:cardinal_direction') == 'north'",
+        "components": {
+          "minecraft:transformation": {
+            "rotation": [ 90, 0, 0 ]
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('minecraft:facing_direction') == 'up' && q.block_state('minecraft:cardinal_direction') == 'south'",
+        "components": {
+          "minecraft:transformation": {
+            "rotation": [ -90, 0, 0 ]
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('minecraft:facing_direction') == 'up' && q.block_state('minecraft:cardinal_direction') == 'east'",
+        "components": {
+          "minecraft:transformation": {
+            "rotation": [ 180, 0, 0 ]
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('minecraft:facing_direction') == 'up' && q.block_state('minecraft:cardinal_direction') == 'west'",
+        "components": {
+          "minecraft:transformation": {
+            "rotation": [ -180, 0, 0 ]
+          }
+        }
+      }
+    ],
+    "components": {
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "pale_oak_planks",
+          "render_method": "opaque"
+        }
+      },
+      "minecraft:light_dampening": 4,
+      "minecraft:destructible_by_mining": { 
+        "seconds_to_destroy": 2
+      },
+      "minecraft:flammable": { 
+        "catch_chance_modifier": 5,
+        "destroy_chance_modifier": 20 
+      },
+      "minecraft:destructible_by_explosion": { 
+        "explosion_resistance": 3
+      }
+    }
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "format_version": "1.21.10",
+  "minecraft:block": {
+    "description": {
+      "identifier": "ja:pale_oak_slab",
+      "menu_category": {
+        "category": "construction",
+        "group": "itemGroup.name.slab"
+      },
+      "states": {
+        "ja:double_slab": [
+          false,
+          true
+        ]
+      },
+      "traits": {
+        "minecraft:placement_position": {
+          "enabled_states": [
+            "minecraft:vertical_half"
+          ]
+        }
+      }
+    },
+    "permutations": [
+      {
+        "condition": "q.block_state('minecraft:vertical_half') == 'bottom' && !q.block_state('ja:double_slab')",
+        "components": {
+          "minecraft:collision_box": {
+            "origin": [ -8, 0, -8 ],
+            "size": [ 16, 8, 16 ]
+          },
+          "minecraft:selection_box": {
+            "origin": [ -8, 0, -8 ],
+            "size": [ 16, 8, 16 ]
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('minecraft:vertical_half') == 'top' && !q.block_state('ja:double_slab')",
+        "components": {
+          "minecraft:collision_box": {
+            "origin": [ -8, 8, -8 ],
+            "size": [ 16, 8, 16 ]
+          },
+          "minecraft:selection_box": {
+            "origin": [ -8, 8, -8 ],
+            "size": [ 16, 8, 16 ]
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('ja:double_slab')",
+        "components": {
+          "minecraft:geometry": "minecraft:geometry.full_block"
+        }
+      }
+    ],
+    "components": {
+      "minecraft:geometry": {   
+        "identifier": "geometry.custom_slab",
+        "bone_visibility": {
+          "lower_slab": "q.block_state('minecraft:vertical_half') == 'bottom'",
+          "upper_slab": "q.block_state('minecraft:vertical_half') == 'top'"
+        }
+      },
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "pale_oak_planks",
+          "render_method": "opaque"
+        }
+      },
+      "minecraft:custom_components": [
+        "ja:custom_slab"
+      ],
+      "minecraft:light_dampening": 4,
+      "minecraft:destructible_by_mining": {
+        "seconds_to_destroy": 2
+      },
+      "minecraft:flammable": {
+        "catch_chance_modifier": 5,
+        "destroy_chance_modifier": 20
+      },
+      "minecraft:destructible_by_explosion": {
+        "explosion_resistance": 3
+      }
+    }
+  }
+}
